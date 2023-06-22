@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(175, 175, 175);
+}
+
+
+.carousel, .carousel-inner > .item > img {
+    
+    width: 50%;
+  }
+
