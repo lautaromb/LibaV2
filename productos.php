@@ -23,8 +23,7 @@ $productos = obtenerProductos();
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $producto->nombre ?></h5>
-                    <img src="<?php echo $producto->img ?>" class="card-img-top" alt="Imagen del producto">
-                <img src="img/productos/<?php echo $producto->img ?>" class="card-img-top" alt="Imagen del producto">
+                <img src="<?php echo $producto->img ?>" class="card-img-top" alt="Imagen del producto" style="width:200px">
                     <p class="card-text"><?php echo $producto->descripcion ?></p>
                     <p class="card-text">$<?php echo number_format($producto->precio, 2) ?></p>
                     <form action="eliminar_producto.php" method="post">
