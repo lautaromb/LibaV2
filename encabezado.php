@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/estilos.css"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
   
 </head>
 

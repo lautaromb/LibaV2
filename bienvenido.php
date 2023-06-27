@@ -4,7 +4,9 @@ $varsesion = $_SESSION['nombre'];
 
 if($varsesion == null || $varsesion = ''){
     header("location:formulario.php");}
- 
+
+    include_once "funciones.php";
+    $productos = obtenerProductos();
 
 ?>
 
@@ -143,6 +145,42 @@ if($varsesion == null || $varsesion = ''){
 
             </div>
         </article>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($productos as $producto) { ?>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $producto->nombre ?></h5>
+                <img src="<?php echo $producto->img ?>" class="card-img-top" alt="Imagen del producto" style="width:270px">
+                    <p class="card-text"><?php echo $producto->descripcion ?></p>
+                    <p class="card-text">$<?php echo number_format($producto->precio, 2) ?></p>
+                    <form action="agregar_al_carrito.php" method="post">
+                            <input type="hidden" name="id_producto" value="<?php echo $producto->id ?>">
+                            <button class="button is-primary">
+                                <i class="fa fa-cart-plus"></i>&nbsp;Agregar al carrito
+                            </button>
+                        </form>
+                    <form action="eliminar_producto.php" method="post">
+                        <input type="hidden" name="id_producto" value="<?php echo $producto->id ?>">
+                        <button class="btn btn-danger">
+                            <i class="fa fa-trash-o"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        <?php } ?>
+
+        </tbody>
+        </table>
     </div> 
 <br><br>
 

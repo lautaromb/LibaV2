@@ -11,7 +11,7 @@ else{
 <div class="columns">
     <div class="column is-one-third">
         <h2 class="is-size-2">Nuevo producto</h2>
-        <form action="guardar_producto.php" method="post">
+        <form action="guardar_producto.php" method="post"  enctype="multipart/form-data">
             <div class="field">
                 <label for="nombre">Nombre</label>
                 <div class="control">
@@ -28,6 +28,12 @@ else{
                 <label for="precio">Precio</label>
                 <div class="control">
                     <input required id="precio" name="precio" class="input" type="number" placeholder="Precio">
+                </div>
+            </div>
+            <div class="field">
+                <label for="precio">Imagen</label>
+                <div class="control">
+                    <input required id="img" name="img" class="input" type="file" placeholder="Imagen">
                 </div>
             </div>
             <div class="field">

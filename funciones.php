@@ -27,7 +27,7 @@ function quitarProductoDelCarrito($idProducto)
 function obtenerProductos()
 {
     $bd = obtenerConexion();
-    $sentencia = $bd->query("SELECT id, nombre, descripcion, precio FROM productos");
+    $sentencia = $bd->query("SELECT id, nombre, descripcion, precio, img FROM productos");
     return $sentencia->fetchAll();
 }
 function productoYaEstaEnCarrito($idProducto)
@@ -74,11 +74,11 @@ function eliminarProducto($id)
     return $sentencia->execute([$id]);
 }
 
-function guardarProducto($nombre, $precio, $descripcion)
+function guardarProducto($nombre, $descripcion, $precio, $img)
 {
     $bd = obtenerConexion();
-    $sentencia = $bd->prepare("INSERT INTO productos(nombre, precio, descripcion) VALUES(?, ?, ?)");
-    return $sentencia->execute([$nombre, $precio, $descripcion]);
+    $sentencia = $bd->prepare("INSERT INTO productos(nombre, descripcion, precio, img) VALUES(?, ?, ?, ?)");
+    return $sentencia->execute([$nombre,  $descripcion, $precio, $img]);
 }
 
 function obtenerVariableDelEntorno($key)

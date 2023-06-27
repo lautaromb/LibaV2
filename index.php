@@ -8,7 +8,11 @@ if($varsesion == null || $varsesion = ''){
         header("location:bienvenido.php");
     }
  
+    include_once "funciones.php";
+$productos = obtenerProductos();
+
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -30,46 +34,7 @@ if($varsesion == null || $varsesion = ''){
      <?php menu(); ?>
     <!-- bootstrap js -->
       <script src="js/bootstrap.bundle.min.js"></script>
-<!--
-    <header>
-        
-    <div class="navbar">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class=" container navbar-brand"><img src="img/loo.png"></a>
-        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="searchrch">
-      <div id="my-nav" class="collapse navbar-collapse">
-   </div> 
-
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                <form class="d-flex">
-                </form>
-                    <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Mis compras</a></li>
-            <li><a class="dropdown-item" href="#">Mis ventas</a></li>
-          </ul>
-        </li>
-                <li class="nav-item">
-                    <a class="nav-link" tabindex="-1" aria-disabled="true" href="index.php">Inicio</a>
-                </li>
-                
-                <li>
-                    <a class="nav-link" href="formulario.php">Login</a>
-                </li>
-                <li class="nav-item dropdown"></li>
-            </ul>
-         </div>
- </nav>
-    </div>
-   
-    </header>
- -->
     <div>
         <section>
             <div id="carouselExampleIndicators" class=" container carousel slide" data-bs-ride="carousel">
@@ -105,6 +70,38 @@ if($varsesion == null || $varsesion = ''){
         </section>
     </div>
     <br><br><br>
+
+
+
+<table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($productos as $producto) { ?>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $producto->nombre ?></h5>
+                <img src="<?php echo $producto->img ?>" class="card-img-top" alt="Imagen del producto" style="width:270px">
+                    <p class="card-text"><?php echo $producto->descripcion ?></p>
+                    <p class="card-text">$<?php echo number_format($producto->precio, 2) ?></p>
+                    <form action="eliminar_producto.php" method="post">
+                        <input type="hidden" name="id_producto" value="<?php echo $producto->id ?>">
+                        <button class="btn btn-danger">
+                            <i class="fa fa-trash-o"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        <?php } ?>
+
+        </tbody>
+        </table>
 
     <div>
         <article>
