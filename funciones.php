@@ -2,6 +2,33 @@
 ?>
 <?php
 
+function prepararDatosGraficoCircular($estadisticasVentas)
+{
+    $datosGraficoCircular = [
+        'labels' => ['Total Ventas', 'Total Productos'],
+        'data' => [$estadisticasVentas['totalVentas'], $estadisticasVentas['totalProductos']],
+        'colores' => ['#ff6384', '#36a2eb'], // Colores para cada segmento del gráfico
+    ];
+
+    return $datosGraficoCircular;
+}
+
+
+
+function generarEstadisticasVentas($datosVentas, $datosProductos)
+{
+    $totalVentas = count($datosVentas);
+    $totalProductos = count($datosProductos);
+
+    // Aquí puedes generar otras estadísticas según tus necesidades
+
+    $estadisticasVentas = [
+        'totalVentas' => $totalVentas,
+        'totalProductos' => $totalProductos,
+    ];
+
+    return $estadisticasVentas;
+}
 function obtenerProductosEnCarrito()
 {
     $bd = obtenerConexion();
@@ -58,7 +85,14 @@ function agregarProductoAlCarrito($idProducto)
     $sentencia = $bd->prepare("INSERT INTO carrito_usuarios(id_sesion, id_producto) VALUES (?, ?)");
     return $sentencia->execute([$idSesion, $idProducto]);
 }
-
+function obtenerVentas()
+{
+    $conexion = obtenerConexion();
+    $consulta = "SELECT id_producto, id_sesion FROM carrito_usuarios";
+    $stmt = $conexion->prepare($consulta);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 function iniciarSesionSiNoEstaIniciada()
 {
