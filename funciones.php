@@ -85,6 +85,23 @@ function agregarProductoAlCarrito($idProducto)
     $sentencia = $bd->prepare("INSERT INTO carrito_usuarios(id_sesion, id_producto) VALUES (?, ?)");
     return $sentencia->execute([$idSesion, $idProducto]);
 }
+//function agregarProductoAlCarritoVentas($idProducto)
+                    //$total = 0;
+                    //foreach ($productos as $producto) {
+                      //  $total += $producto->precio;
+                    
+//{
+    //$NPedido = 0;
+    // Ligar el id del producto con el usuario a través de la sesión
+ //   $bd = obtenerConexion();
+  //  iniciarSesionSiNoEstaIniciada();
+  //  $idSesion = session_id();
+    //  $NPedido = $NPedido + 1
+  //  $sentencia = $bd->prepare("INSERT INTO ventas(IdSesion, NPedidos, Nombre, Cantidad, PrecioTotal) VALUES (?, ?, ?,?)");
+  //  return $sentencia->execute([ $idSesion, $NPedido, $nombre, $cantidad, $total]);
+//}
+//}
+
 function obtenerVentas()
 {
     $conexion = obtenerConexion();

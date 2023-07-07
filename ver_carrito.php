@@ -28,6 +28,7 @@ if (count($productos) <= 0) {
                     <tr>
                         <th>Nombre</th>
                         <th>Descripción</th>
+                        <th>Cantidad</th>
                         <th>Precio</th>
                         <th>Quitar</th>
                     </tr>
@@ -63,7 +64,7 @@ if (count($productos) <= 0) {
                     </tr>
                 </tfoot>
             </table>
-            <a href="terminar_compra.php" class="button is-success is-large"><i class="fa fa-check"></i>&nbsp;Terminar compra</a>
+            <a href="terminar_compra.php" class="button is-success is-large"><i class="fa fa-check"></i>&nbsp;Terminar compraz</a>
         </div>
     </div>
 <?php } ?>
