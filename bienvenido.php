@@ -4,9 +4,7 @@ $varsesion = $_SESSION['nombre'];
 
 if($varsesion == null || $varsesion = ''){
     header("location:formulario.php");}
-
-    include_once "funciones.php";
-    $productos = obtenerProductos();
+ 
 
 ?>
 
@@ -21,7 +19,7 @@ if($varsesion == null || $varsesion = ''){
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <?php include('inc/menu.php');  ?>
-    <title>Tienda lomas</title>
+    <title>Acuarela</title>
     <link rel="icon" href="img/icono.png" type="image/x-icon">
     
    
@@ -71,137 +69,105 @@ if($varsesion == null || $varsesion = ''){
     </div>
    
     </header>
- --><br><br>
-    <div>
-        <section>
-            <br><br>
-            <div id="carouselExampleIndicators" class=" container carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
 
-                <div class="carousel-inner width = 250px">
-                <div class="carousel-item active">
-                <img src="img/54411-valorant.jpg" class="d-block w-100" alt="..." width="800" height="450">
-                </div>
+ -->
+ <nav aria-label="Page navigation example">
+    <section>
+               <h2><?php echo $_SESSION['nombre'] ?> </h2>
+               <a href="cerrarsesion.php">Cerrar Sesion</a>
+ 
+</nav>
 
-                <div class="carousel-item">
-                <img src="img/gaming.jpg" class="d-block w-100" alt="..." width="800" height="450">
-                </div>
-                <div class="carousel-item">
-                <img src="img/ps4.png" class="d-block w-100" alt="..." width="800" height="450">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-
-            </div>
-        </section>
+ <br><br>
+ <div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 6"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 7"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 8"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 9"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10" aria-label="Slide 10"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11" aria-label="Slide 11"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="12" aria-label="Slide 12"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="13" aria-label="Slide 13"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="14" aria-label="Slide 14"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/1.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/2.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/3.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/4.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/5.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/6.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/7.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/8.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/9.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/10.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/11.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/12.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/13.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/14.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+    <div class="carousel-item">
+      <img src="img/15.jpg" class="d-block w-100" alt="..." width="800" height="450">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+       
     </div>
     <br><br><br>
 
     <div>
-        <article>
-            <div class="row justify-content-center">
-                <div class="col-3">
-                    <div class="card">
-                        <img class="card-img-top" src="img/concepto-4817549.jpg" alt="">
-                        <div class="card-body">
-                            <button type="button" class="btn btn-secondary">Ir a la tienda</button>
-                            <h5 class="card-title">Producto 1</h5>
-                            <p class="card-text">Mouse razer</p>
-                        </div>
-                    </div>                   
-                </div>
-                <div class="col-3">
-                    <div class="card">
-                        <img class="card-img-top" src="img/auri.png" alt="">
-                        <div class="card-body">
-                            <button type="button" class="btn btn-secondary">Ir a la tienda</button>
-                            <h5 class="card-title">Producto 2</h5>
-                            <p class="card-text">Auriculares</p>
-                        </div>
-                    </div>                   
-                </div>
-                <div class="col-3">
-                    <div class="card">
-                        <img class="card-img-top" src="img/note.png" alt="">
-                        <div class="card-body">
-                            <button type="button" class="btn btn-secondary">Ir a la tienda</button>
-                            <h5 class="card-title">Producto 3</h5>
-                            <p class="card-text">Notebook</p>
-                        </div> 
-                    </div>                   
-                </div>
-
-            </div>
-        </article>
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($productos as $producto) { ?>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $producto->nombre ?></h5>
-                <img src="<?php echo $producto->img ?>" class="card-img-top" alt="Imagen del producto" style="width:270px">
-                    <p class="card-text"><?php echo $producto->descripcion ?></p>
-                    <p class="card-text">$<?php echo number_format($producto->precio, 2) ?></p>
-                    <form action="agregar_al_carrito.php" method="post">
-                            <input type="hidden" name="id_producto" value="<?php echo $producto->id ?>">
-                            <button class="button is-primary">
-                                <i class="fa fa-cart-plus"></i>&nbsp;Agregar al carrito
-                            </button>
-                        </form>
-                    <form action="eliminar_producto.php" method="post">
-                        <input type="hidden" name="id_producto" value="<?php echo $producto->id ?>">
-                        <button class="btn btn-danger">
-                            <i class="fa fa-trash-o"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        <?php } ?>
-
-        </tbody>
-        </table>
+        
     </div> 
 <br><br>
 
-    <nav aria-label="Page navigation example">
-    <section>
-               <h2><?php echo $_SESSION['nombre'] ?> </h2>
-               <a href="cerrarsesion.php">Cerrar Sesion</a>
-  <ul class="pagination justify-content-center">
-    <li class="page-item"><a class="page-link" href="">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="indexan.php">1</a></li>
-    <li class="page-item"><a class="page-link" href="p2l.php">2</a></li>
-    <li class="page-item"><a class="page-link" href="p3l.php">3</a></li>
-    <li class="page-item"><a class="page-link" href="p2l.php">Next</a></li>
-  </ul>
-</nav>
-
+    
         <footer>
             <br>
             <br>
             <br>     
-            <p style="text-align: center;">Tienda lomas © 2020 - 2021. Todos los derechos reservados.</p>
+            <p style="text-align: center;">Acuarela © 2023 - 2024. Todos los derechos reservados.</p>
         </footer>
      <?php
     // Paso 1: Datos de conexion
