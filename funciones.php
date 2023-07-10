@@ -54,7 +54,7 @@ function quitarProductoDelCarrito($idProducto)
 function obtenerProductos()
 {
     $bd = obtenerConexion();
-    $sentencia = $bd->query("SELECT id, nombre, descripcion, precio, img FROM productos");
+    $sentencia = $bd->query("SELECT id, nombre, descripcion, precio, img, cantidad FROM productos");
     return $sentencia->fetchAll();
 }
 function productoYaEstaEnCarrito($idProducto)

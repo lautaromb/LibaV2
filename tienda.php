@@ -34,7 +34,11 @@ $productos = obtenerProductos();
                     <div class="content">
                         <?php echo $producto->descripcion ?>
                     </div>
+                    <div class="content">
+                    <img src="<?php echo $producto->img ?>" class="card-img-top" alt="Imagen del producto" style="width:200px">
+                    </div>
                     <h1 class="is-size-3">$<?php echo number_format($producto->precio, 2) ?></h1>
+                    <h1 class="is-size-3">Stock -> <?php echo $producto->cantidad ?></h1>
                     <?php if (productoYaEstaEnCarrito($producto->id)) { ?>
                         <form action="eliminar_del_carrito.php" method="post">
                             <input type="hidden" name="id_producto" value="<?php echo $producto->id ?>">

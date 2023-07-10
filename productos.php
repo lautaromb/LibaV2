@@ -26,6 +26,7 @@ $productos = obtenerProductos();
                 <img src="<?php echo $producto->img ?>" class="card-img-top" alt="Imagen del producto" style="width:200px">
                     <p class="card-text"><?php echo $producto->descripcion ?></p>
                     <p class="card-text">$<?php echo number_format($producto->precio, 2) ?></p>
+                    <p class="card-text">Stock -> <?php echo $producto->cantidad ?></p>
                     <form action="eliminar_producto.php" method="post">
                         <input type="hidden" name="id_producto" value="<?php echo $producto->id ?>">
                         <button class="btn btn-danger">
