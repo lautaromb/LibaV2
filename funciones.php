@@ -79,33 +79,85 @@ function obtenerIdsDeProductosEnCarrito()
 function agregarProductoAlCarrito($idProducto)
 {
     // Ligar el id del producto con el usuario a través de la sesión
+    $Cantidad = 0;
+    $Cantidad = $Cantidad + 1;
     $bd = obtenerConexion();
     iniciarSesionSiNoEstaIniciada();
     $idSesion = session_id();
-    $sentencia = $bd->prepare("INSERT INTO carrito_usuarios(id_sesion, id_producto) VALUES (?, ?)");
-    return $sentencia->execute([$idSesion, $idProducto]);
+    $sentencia = $bd->prepare("INSERT INTO carrito_usuarios(id_sesion, id_producto, cantidad) VALUES (?, ?, ?)");
+    return $sentencia->execute([$idSesion, $idProducto, $Cantidad]);
 }
-//function agregarProductoAlCarritoVentas($idProducto)
-                    //$total = 0;
-                    //foreach ($productos as $producto) {
-                      //  $total += $producto->precio;
+function agregarProductoAlCarritoVentas($idProducto, $idSesion, $NPedido, $nombre, $cantidad, $total)
                     
-//{
-    //$NPedido = 0;
-    // Ligar el id del producto con el usuario a través de la sesión
- //   $bd = obtenerConexion();
-  //  iniciarSesionSiNoEstaIniciada();
-  //  $idSesion = session_id();
-    //  $NPedido = $NPedido + 1
-  //  $sentencia = $bd->prepare("INSERT INTO ventas(IdSesion, NPedidos, Nombre, Cantidad, PrecioTotal) VALUES (?, ?, ?,?)");
-  //  return $sentencia->execute([ $idSesion, $NPedido, $nombre, $cantidad, $total]);
-//}
-//}
+                    
+                    
+                       {
+                            $NPedido = 0;
+                            // Ligar el id del producto con el usuario a través de la sesión
+                            $bd = obtenerConexion();
+                           iniciarSesionSiNoEstaIniciada();
+                           $idSesion = session_id();
+                            $NPedido = $NPedido + 1;
+                            $ProductosEnCarritos = obtenerProductosEnCarrito();
+                            foreach ($ProductosEnCarritos as $producto) {
+                            $total = $producto->precio;
+                            $nombre= $producto->Nombre;
+                            //$cantidad = $producto->Cantidad;
+                            $total = $producto->PrecioTotal;
+                            $sentencia = $bd->prepare("INSERT INTO ventas(IdSesion, NPedidos, Nombre, Cantidad, PrecioTotal) VALUES (?, ?, ?, ?, ?)");
+                        return $sentencia->execute([ $idSesion, $NPedido, $nombre, $cantidad, $total]);
+                        }
+                        }
+                    
+                         
+function obtenerCantidadProductoEnCarrito($idProducto) {
+    
+
+    
+    if (isset($_SESSION['carrito'][$idProducto])) {
+        return $_SESSION['carrito'][$idProducto]['cantidad'];
+
+    }
+
+}
+
+
+function sumarCantidadProductoEnCarrito($idProducto, $cantidadSumar) {
+    if (isset($_SESSION['carrito'][$idProducto])) {
+        $bd = obtenerConexion();
+        $idSesion = session_id();
+        
+        // Obtener la cantidad actual del producto en la base de datos
+        $sentencia = $bd->prepare("SELECT cantidad FROM carrito_usuarios WHERE id_sesion = ? AND id_producto = ?");
+        $sentencia->bind_param("ss", $idSesion, $idProducto);
+        $sentencia->execute();
+        $resultado = $sentencia->get_result();
+        $fila = $resultado->fetch_assoc();
+        $cantidadActual = $fila['cantidad'];
+        
+        // Actualizar la cantidad sumando la cantidad existente más la cantidad a sumar más 1
+        $nuevaCantidad = $cantidadActual + $cantidadSumar + 1;
+        
+        // Actualizar la columna cantidad en la base de datos
+        $sentencia = $bd->prepare("UPDATE carrito_usuarios SET cantidad = ? WHERE id_sesion = ? AND id_producto = ?");
+        $sentencia->bind_param("dss", $nuevaCantidad, $idSesion, $idProducto);
+        $resultado = $sentencia->execute();
+        
+        $_SESSION['carrito'][$idProducto]['cantidad'] += $cantidadSumar;
+    }
+}
+
+
+function existeProductoEnCarrito($idProducto) {
+    
+    return isset($_SESSION['carrito'][$idProducto]);
+}
+
 
 function obtenerVentas()
 {
     $conexion = obtenerConexion();
-    $consulta = "SELECT id_producto, id_sesion FROM carrito_usuarios";
+    $consulta = "SELECT id_producto, id_sesion, cantidad FROM carrito_usuarios";
     $stmt = $conexion->prepare($consulta);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);

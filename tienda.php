@@ -20,13 +20,14 @@ $productos = obtenerProductos();
     </div>
 </div>
 <?php foreach ($productos as $producto) { ?>
-
+   
     <div class="columns">
         <div class="column is-full">
             <div class="card">
                 <header class="card-header">
                     <p class="card-header-title is-size-4">
                         <?php echo $producto->nombre ?>
+
                     </p>
                 </header>
                 <div class="card-content">
@@ -43,10 +44,17 @@ $productos = obtenerProductos();
                             <button class="button is-danger">
                                 <i class="fa fa-trash-o"></i>&nbsp;Quitar
                             </button>
+                        
+                        </form>
+                        <form action="sumar_del_carrito.php" method="post" >
+                            <input type="hidden" name="id_producto"  value="<?php  echo $producto->id ?>">
+                            <button class="button is-primary">
+                                <i class="fa fa-cart-plus"></i>&nbsp;Agregar al carrito
+                            </button>
                         </form>
                     <?php } else { ?>
                         <form action="agregar_al_carrito.php" method="post">
-                            <input type="hidden" name="id_producto" value="<?php echo $producto->id ?>">
+                            <input type="hidden" name="id_producto" value="<?php echo $producto->id  ?>">
                             <button class="button is-primary">
                                 <i class="fa fa-cart-plus"></i>&nbsp;Agregar al carrito
                             </button>
