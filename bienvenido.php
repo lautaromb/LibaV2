@@ -11,7 +11,9 @@ if($varsesion == null || $varsesion = ''){
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    <link rel="stylesheet" href="estiloswsp.css">
+    <link rel="stylesheet" href="fontello.css">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -76,8 +78,11 @@ if($varsesion == null || $varsesion = ''){
                <h2><?php echo $_SESSION['nombre'] ?> </h2>
                <a href="cerrarsesion.php">Cerrar Sesion</a>
  
-</nav>
-
+</nav><br>
+<a href="https://api.whatsapp.com/send?phone=1133176524" class="btn-wsp" target="_blank">
+	    <i class="icon-whatssap"></i><img src="img/icon-whatssap.png" alt="">
+	</a><br>
+  
  <br><br>
  <div id="carouselExampleIndicators" class="carousel slide">
   <div class="carousel-indicators">

@@ -41,6 +41,8 @@
                <a class="navbar-item" href="productos.php">Productos</a>
             <a class="navbar-item" href="tienda.php">Tienda</a>
             <a class="navbar-item" href="reportes.php">Reportes</a>
+            <a class="navbar-item" href="bdd.php">ABM usuarios</a>
+            <a class="navbar-item" href="reportesmail.php">Reportes email</a>
             </div>
         </div>
             <div class="navbar-end">

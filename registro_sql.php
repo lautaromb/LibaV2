@@ -27,7 +27,7 @@
         $alta = "insert into usuario values ('$nombre','$apellido','$usuario','$email','$contraseña','$direccion','$ciudad','$provincia')";
         $resultado_alta = mysqli_query($conexion,$alta);
 
-        header("Location: bdd.php");
+        header("Location: bienvenido.php");
                                
     }
 ?>

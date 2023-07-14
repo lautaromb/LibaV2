@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<title>Registro</title>
+	<title>Registra tu cuenta</title>
   <link rel="icon" href="img/icono.png"  type="image/x-icon">
   <?php  
       include('inc/conexion.php');
@@ -110,7 +110,7 @@
 		<br><br>	
 	
 <footer>  
-  <p style="text-align: center;">Tienda lomas © 2020 - 2021. Todos los derechos reservados.</p>
+  <p style="text-align: center;">Acuarela © 2022 - 2023. Todos los derechos reservados.</p>
 </footer>
 </body>
 </html>

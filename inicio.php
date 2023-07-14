@@ -11,15 +11,20 @@
     <?php include('inc/menu.php');  ?>
     <title>Acuarela</title>
     <link rel="icon" href="img/icono.png" type="image/x-icon">
-   
+    <link rel="stylesheet" href="estiloswsp.css">
+    <link rel="stylesheet" href="fontello.css">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
   </head>
 
   <body class="container-fluid">
 
      <?php menu(); ?>
     <!-- bootstrap js -->
+
       <script src="js/bootstrap.bundle.min.js"></script>
-<!--
+      
+<!-- 
+  
     <header>
         
     <div class="navbar">
@@ -59,6 +64,11 @@
    
     </header>
  -->
+ <a href="https://api.whatsapp.com/send?phone=1133176524" class="btn-wsp" target="_blank">
+	    <i class="icon-whatssap"></i><img src="img/icon-whatssap.png" alt="">
+	</a><br>
+  
+  <br>
  <div id="carouselExampleIndicators" class="carousel slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
@@ -135,6 +145,7 @@
 </div>
         </section>
     </div>
+    
     <br><br><br>
 
     

@@ -37,7 +37,7 @@
             <button type="submit" class="btn btn-primary">Iniciar sesion</button>
             <a class="btn btn-primary" href="registro.php" role="button">Crear Cuenta</a>
         </form>  <br>      
-          
+          <a href="recuperarpass.php">¿Se te olvido la contraseña?</a>
         </div>
         <div class="col-3"></div>
     </div>
@@ -78,7 +78,7 @@
     <script src="js/bootstrap.bundle.min.js"></script>
   <footer>
      <br><br><br>    
-      <p style="text-align: center;">Tienda lomas © 2020 - 2021. Todos los derechos reservados.</p>
+      <p style="text-align: center;">Acuarela © 2022 - 2023. Todos los derechos reservados.</p>
   </footer>
 
 
